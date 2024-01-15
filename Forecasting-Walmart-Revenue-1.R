@@ -3,10 +3,10 @@
 library(forecast)
 
 # Set working directory for locating files.
-setwd("C:/Users/STSC/Downloads/Time Series Case 2")
+setwd("C:/Users/STSC/Data Analytics/Time Series Project")
 
 # Create data frame.
-walmart.data <- read.csv("673_case2(1).csv")
+walmart.data <- read.csv("Walmart-Revenue-Data.csv")
 
 
 ## Question 1(a)
