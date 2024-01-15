@@ -9,7 +9,7 @@ setwd("C:/Users/STSC/Data Analytics/Time Series Project")
 walmart.data <- read.csv("Walmart-Revenue-Data.csv")
 
 
-## Question 1(a)
+## Task 1(a)
 
 # create time series data set using ts() function
 walmart.ts <- ts(walmart.data$Revenue, 
@@ -20,7 +20,7 @@ walmart.ts
 
 
 
-## Question 1(b)
+## Task 1(b)
 
 # Create a data plot with the historical data using the plot() function 
 plot(walmart.ts, main = "Walmart Quarterly Revenue (2005-2022)", xlab = "Year", 
@@ -28,7 +28,7 @@ plot(walmart.ts, main = "Walmart Quarterly Revenue (2005-2022)", xlab = "Year",
 
 
 
-## Question 2(a)
+## Task 2(a)
 
 # Define the length of the training and validation set
 nValid <- 16 
@@ -41,7 +41,7 @@ valid.ts <- window(walmart.ts, start = c(2019, 1),
 
 
 
-## Question 2(b)
+## Task 2(b)
 
 ## MODEL 1: Regression model with linear trend
 # Create regression model with linear trend using tslm() function
@@ -104,7 +104,7 @@ train.quad.season.pred
 
 
 
-## Question 2(c)
+## Task 2(c)
 
 ## MODEL 1: Regression model with linear trend
 # To identify common accuracy measures using accuracy() function
@@ -128,7 +128,7 @@ round(accuracy(train.quad.season.pred$mean, valid.ts),3)
 
 
 
-## Question 3(a)
+## Task 3(a)
 
 ## MODEL 1: Regression mode with linear trend
 # Create regression model with linear trend using tslm() function
@@ -167,7 +167,7 @@ quad.season.pred
 
 
 
-## Quetsion 3(b)
+## Task 3(b)
 
 ## MODEL 2: Regression mode with quadratic trend
 # To identify common accuracy measures using accuracy() function
