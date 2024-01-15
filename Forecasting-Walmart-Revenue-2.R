@@ -28,7 +28,7 @@ valid.ts
 
 
 
-# QUESTION 1(A)
+# Task 1(A)
 
 # Use Arima() function to fit AR(1) model for the historical data.
 walmart.ar1 <- Arima(walmart.ts, order = c(1,0,0))
@@ -54,7 +54,7 @@ if (p.value<alpha) {
 
 
 
-# QUESTION 1(B)
+# Task 1(B)
 
 # Create first difference of Walmart Revenue data using diff() function.
 diff.walmart <- diff(walmart.ts, lag = 1)
@@ -69,7 +69,7 @@ Acf(diff.walmart, lag.max = 8,
 
 
 
-# QUESTION 2(A)
+# Task 2(A)
 
 # Create regression model with quadratic trend and seasonality using tslm() function
 train.quad.season <- tslm(train.ts ~ trend + I(trend^2) + season)
@@ -83,7 +83,7 @@ train.quad.season.pred
 
 
 
-# QUESTION 2(B)
+# Task 2(B)
 
 # Use Acf() function to identify autocorrelation for the model residuals 
 # (training set), and plot autocorrelation for different 
@@ -94,7 +94,7 @@ Acf(residual, lag.max = 8,
 
 
 
-# QUESTION 2(C)
+# Task 2(C)
 
 # Use Arima() function to fit AR(1) model for the regression residuals.
 res.ar1 <- Arima(train.quad.season$residuals, order = c(1,0,0))
@@ -109,7 +109,7 @@ Acf(res.ar1$residuals, lag.max = 8,
     main = "Autocorrelation Chart")
 
 
-# QUESTION 2(D)
+# Task 2(D)
 
 # Use forecast() function to make prediction of residuals in validation set.
 res.ar1.pred <- forecast(res.ar1, h = nValid, level = 0)
@@ -131,7 +131,7 @@ valid.df
 
 
 
-# QUESTION 2(E)
+# Task 2(E)
 
 ## FIT REGRESSION MODEL WITH QUADRATIC TREND AND SEASONALITY FOR ENTIRE DATASET.
 
@@ -174,7 +174,7 @@ table.df
 
 
 
-# QUESTION 3(A)
+# Task 3(A)
 
 ## FIT ARIMA(1,1,1)(1,1,1) MODEL.
 
@@ -192,7 +192,7 @@ train.arima.seas.pred
 
 
 
-# QUESTION 3(B)
+# Task 3(B)
 
 ## FIT AUTO ARIMA MODEL.
 
@@ -209,7 +209,7 @@ train.auto.arima.pred
 
 
 
-# QUESTION 3(C)
+# Task 3(C)
 
 # (3a) ARIMA(1,1,1)(1,1,1) model. 
 round(accuracy(train.arima.seas.pred$mean, valid.ts), 3)
@@ -219,7 +219,7 @@ round(accuracy(train.auto.arima.pred$mean, valid.ts), 3)
 
 
 
-# QUESTION 3(D)
+# Task 3(D)
 
 # Use arima() function to fit seasonal ARIMA(1,1,1)(1,1,1) model 
 # for entire data set.
@@ -248,7 +248,7 @@ auto.arima.pred
 
 
 
-# QUESTION 3(E)
+# Task 3(E)
 
 # Use accuracy() function to identify common accuracy measures for:
 
